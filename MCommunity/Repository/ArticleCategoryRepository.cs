@@ -47,15 +47,17 @@ namespace MCommunity.Repository
             {
                 return false;
             }
-            dbContext.ArticleCategories.Add(articleCategory);
-            if (dbContext.SaveChanges() > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            int count = dbContext.ArticleCategories.Insert(articleCategory);
+
+           if (count > 0)
+           {
+               return true;
+           }
+           else
+           {
+               return false;
+           }
         }
 
         /// <summary>

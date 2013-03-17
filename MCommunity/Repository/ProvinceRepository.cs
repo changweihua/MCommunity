@@ -40,9 +40,9 @@ namespace MCommunity.Repository
         /// 省列表
         /// </summary>
         /// <returns></returns>
-        public IQueryable<Province> List()
-        {
-            return dbContext.Provinces;
-        }
+        //public IQueryable<Province> List()
+        //{
+        //    return dbContext.Provinces;
+        //}
     }
 }

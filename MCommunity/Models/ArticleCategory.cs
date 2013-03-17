@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using NLite.Data;
 
 namespace MCommunity.Models
 {
@@ -34,12 +34,15 @@ namespace MCommunity.Models
     /// <summary>
     /// 摘要
     /// </summary>
+    /// 
+    [Table(Name = "tbArticleCategory")]
     public class ArticleCategory
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage="{0} 必须填写")]
-        [Display(Name="分类名称")]
+        [Id(IsDbGenerated = true)]
+        public int CategoryId { get; set; }
+        [Column(Name = "CategoryName")]
         public string CategoryName { get; set; }
+        [Column(Name = "SortOrder")]
         public int SortOrder { get; set; }
     }
 }

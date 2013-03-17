@@ -18,7 +18,7 @@ namespace MCommunity.Controllers
         {
             repository = new ArticleCategoryRepository();
             IQueryable<ArticleCategory> articleCategoryies;
-           // repository.Add(new ArticleCategory { SortNumber = 1, CategoryName = "2222" });
+            // repository.Add(new ArticleCategory { SortNumber = 1, CategoryName = "2222" });
             articleCategoryies = repository.List();
 
             return View(articleCategoryies);
