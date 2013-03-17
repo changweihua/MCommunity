@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NLite</id>
+    <version>0.9.5.8</version>
+    <title>NLite</title>
+    <authors>netcasewqs</authors>
+    <owners>netcasewqs</owners>
+    <projectUrl>http://nlite.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NLite 框架旨在提供一个轻量级的组件库-DI，Aop,MessageBus, OO Mapper，国际化,数据校验，日志，异常管理，多线程等</description>
+    <summary>NLite 框架旨在提供一个轻量级的组件库-DI，Aop,MessageBus, OO Mapper，国际化,数据校验，日志，异常管理，多线程等</summary>
+    <releaseNotes>http://www.cnblogs.com/netcasewqs/archive/2012/12/23/2830203.html</releaseNotes>
+    <language>zh-CN</language>
+    <tags>IOC DI AOP MessageBus OOMapper Validation</tags>
+    <references>
+      <reference file="NLite.dll" />
+    </references>
+  </metadata>
+</package>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Portraint";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+                <ul class="breadcrumb" style="margin-bottom: 5px;">
+                    <li><a href="/blog/changvh">首页</a> <span class="divider">/</span></li>
+                    <li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  
+                    <li class="active">修改头像</li>
+                </ul>
+                <div class="back-right-inner" style="margin-top:25px;">
+                    <!-- portraint start ================================================== -->
+                    	<div id="portraint">
+                            <table width="735" border="0" class="portraint_tb">
+                              <tr>
+                              	<td rowspan="2"><img src="@Url.Content("~/Content/noportraint_big.jpg")" style="width:120px;height:120px;" class="img-polaroid thumbnail"/></td>
+                                <td height="52">
+                                	<div class="alert alert-info" style="width:300px;">
+                                      选择新的头像图片: 支持 jpg,png,gif格式的图片.　　上传图片的大小不得超过200K.
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    <form id="portraint_up_form" enctype="multipart/form-data" method="post" action="/admin/upload/portraint-upload">
+                                        <span id='bt_upload'>
+                                            <input name="imgFile" type="file" size="30" id="upload_file" />
+                                            <input type="button" id='portraint_up_bt' value='上传' class="btn btn-primary"/> 上传后需要进行头像剪裁<br/>
+                                        </span>
+                                        <span id='bt_save' style='display:none'>
+                                            <input type='button' value='保存选中区域' id='save_region_bt' class="btn btn-small btn-primary"/>
+                                            <input type='button' value='保存全图' id='save_all_bt'/ class="btn btn-small btn-primary"> 选择"保存全图"头像可能会变形
+                                        </span>
+                                    </form>
+                                    <form id='portraint_save_form' action="/admin/upload/portraint-save" method="post" style='display:none;'>
+                                        <input type="hidden" name="filePath" id="portraintimgpath" value=""/>
+                                        <input type='hidden' id='img_left' name='left' value='0'/>
+                                        <input type='hidden' id='img_top' name='top' value='0'/>
+                                        <input type='hidden' id='img_width' name='width' value='0'/>
+                                        <input type='hidden' id='img_height' name='height' value='0'/>
+                                    </form>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">
+                                    <img src="" id="crop_img"/>
+                                </td>
+                              </tr>
+                            </table>
+                        </div>
+                    <!-- portraint end ================================================== -->
+                </div>

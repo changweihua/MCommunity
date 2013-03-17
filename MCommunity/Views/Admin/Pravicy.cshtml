@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Pravicy";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+                <ul class="breadcrumb" style="margin-bottom: 5px;">
+                    <li><a href="/blog/changvh">首页</a> <span class="divider">/</span></li>
+                    <li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  
+                    <li class="active">隐私设置</li>
+                </ul>
+                <div class="back-right-inner">
+                    <!-- privacy start ================================================== -->
+                    <div class="privacy-item">
+						<span class="privacy-title">
+							是否记录我 <span class="label label-info">发表博客</span> 的动态
+						</span>
+						<span class="privacy_opt" id="privacy_blog_add_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_blog_add',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_blog_add_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_blog_add',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+					</div>
+                     <div class="privacy-item">
+						<span class="privacy-title">
+							是否记录我 <span class="label label-info">评论博客</span> 的动态
+						</span>
+						<span class="privacy_opt" id="privacy_comment_add_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_comment_add',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_comment_add_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_comment_add',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+					</div>
+                     <div class="privacy-item">
+						<span class="privacy-title">
+							是否记录我 <span class="label label-info">回复评论</span> 的动态
+						</span>
+						<span class="privacy_opt" id="privacy_comment_reply_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_comment_reply',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_comment_reply_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_comment_reply',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+					</div>
+                     <div class="privacy-item">
+						<span class="privacy-title">
+							是否记录我 <span class="label label-info">关注TA人</span> 的动态
+						</span>
+						<span class="privacy_opt" id="privacy_concern_add_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_concern_add',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_concern_add_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_concern_add',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+					</div>
+                     <div class="privacy-item">
+						<span class="privacy-title">
+							是否记录我 <span class="label label-info">收藏文章</span> 的动态
+						</span>
+						<span class="privacy_opt" id="privacy_blog_post_favorite_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_blog_post_favorite',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_blog_post_favorite_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_blog_post_favorite',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+					</div>
+                     <div class="privacy-item">
+						<span class="privacy-title">
+							是否显示我 <span class="label label-info">在线状态</span> 
+						</span>
+						<span class="privacy_opt" id="privacy_user_status_0"  >
+							<button class="btn btn-small" type="button" disabled="disabled">显示</button> 
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_user_status',0)">隐藏</button>
+						</span>
+						<span class="privacy_opt" id="privacy_user_status_1" style="display:none;" >
+							<button class="btn btn-success btn-small" type="button" onclick="javascript:privacy('privacy_user_status',1)">显示</button>
+							<button class="btn btn-small" type="button" disabled="disabled">隐藏</button> 
+						</span>
+                        ( 只显示我是否在线,不显示我正在干什么 )
+					</div>
+                    <!-- privacy end ================================================== -->
+                </div>

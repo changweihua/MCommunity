@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@section Banner{
+    <div class="blog-banner">
+        <div class="blog-banner-uname">
+            CMONO.NET社区 首页
+        </div>
+    </div>
+}
+
+@section TopRight{
+    <div class="pull-right">
+        <ul class="nav pull-right">
+	        <li>
+	            <a href="/Admin/Index" >
+	              	<img src='@Url.Content("~/Content/logo.ico")' class="img-circle" /> &nbsp;Changweihua
+	            </a>
+	        </li>
+	        <li>
+                <a id='remind_count'><span class="badge badge-info">1</span></a>	              
+	        </li>
+	        <li>
+                <a href='/Admin/Message' target='_blank' style='padding-left:10px;padding-right:5px;'><span style='color: #990000;font-size:13px;'><img src='@Url.Content("~/Content/new.gif")' /> 您有<strong>1</strong>条新消息</span></a>	              
+	        </li>
+	        <li class="dropdown">
+	            <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:5px;padding-right:5px;">
+	                <i class="icon-signal"></i>&nbsp;我的博客
+	            </a>
+	            <ul class="dropdown-menu" role="menu">
+	                <li><a href="/Admin/Home" target="_blank"><i class="icon-home"></i>&nbsp;个人中心</a></li>
+	                <li><a href="/Admin/Article" target="_blank"><i class="icon-file"></i>&nbsp;我的文章</a></li>
+	                <li><a href="/Admin/ArticleCategory" target="_blank"><i class="icon-tags"></i>&nbsp;博客分类</a></li>
+	                <li><a href="/Admin/Comment" target="_blank"><i class="icon-comment"></i>&nbsp;博客评论</a></li>
+	                <li><a href="/Admin/Concern" target="_blank"><i class="icon-eye-open"></i>&nbsp;我的关注</a></li>
+	                <li><a href="/Admin/Visit" target="_blank"><i class="icon-road"></i>&nbsp;访客记录</a></li>
+	                <li><a href="/Admin/Favorite" target="_blank"><i class="icon-heart"></i>&nbsp;我的收藏</a></li>
+	                <li><a href="/Admin/Portraint" target="_blank"><i class="icon-picture"></i>&nbsp;我的头像</a></li>
+	                <li><a href="/Admin/Privacy" target="_blank"><i class="icon-lock"></i>&nbsp;隐私设置</a></li>
+	                <li><a href="/Admin/Profile" target="_blank"><i class="icon-user"></i>&nbsp;个人资料</a></li>
+	            </ul>
+	        </li>
+	        <li><a href="/Admin/Logout" class="logout"><i class="icon-off"></i>&nbsp;退出</a></li>
+	    </ul>	</div>
+}
+

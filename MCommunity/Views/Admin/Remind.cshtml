@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Remind";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+<li><a href="/blog/changvh">首页</a> <span class="divider">/</span></li>
+<li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  	<li class="active">通知</li>
+                </ul>
+                <div class="back-right-inner">
+                    <!-- pm-item start ================================================== -->
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="/admin/reminds">全部&nbsp;<span class="badge badge-info">2</span></a>
+                      </li>
+                      <li ><a href="/admin/reminds?type=2">博客评论&nbsp;</a></li>
+                      <li ><a href="/admin/reminds?type=3">关注我&nbsp;</a></li>
+                      <li ><a href="/admin/reminds?type=4">收藏我的文章&nbsp;</a></li>
+                      <li ><a href="/admin/reminds?type=5">评论回复&nbsp;</a></li>
+                    </ul>
+                    <!-- pm-item start ================================================== -->
+	<div class="pm-item">
+    	<table>
+          <tr>
+            <td rowspan="2" valign="top" width="50px">
+            	<div  class="pm-item-head">
+                	<a href="/blog/skywalker" target="blank">
+                		<img src="@Url.Content("~/Content/noportraint.jpg")" class="img-rounded"  style="width:35px;height:35px;" border="0">
+                	</a>
+                </div>
+            </td>
+            <td colspan="2" width="800px">
+                 <div class="pm-item-summary">
+                   <a href="/blog/skywalker" target="_blank">@@牛仔很忙</a> 关注了您
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+		    	<i class="icon-time"></i>&nbsp;<span class="timeago muted" title="2013-01-20 10:59:44">2013-01-20 10:59:44</span>
+		    	 
+		    		<img src="@Url.Content("~/Content/new.gif")" />
+            </td>
+            <td align="right"></td>
+          </tr>
+		</table>
+    </div>
+	<div class="pm-item">
+    	<table>
+          <tr>
+            <td rowspan="2" valign="top" width="50px">
+            	<div  class="pm-item-head">
+                	<a href="/blog/changvh" target="blank">
+                		<img src="http://bebop.qiniudn.com/images/noportraint.jpg" class="img-rounded"  style="width:35px;height:35px;" border="0">
+                	</a>
+                </div>
+            </td>
+            <td colspan="2" width="800px">
+                 <div class="pm-item-summary">
+                   <a href="/blog/changvh" target="_blank">@@Changweihua</a> 加入了 Bebeop
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+		    	<i class="icon-time"></i>&nbsp;<span class="timeago muted" title="2013-01-20 10:57:19">2013-01-20 10:57:19</span>
+		    	 
+            </td>
+            <td align="right"></td>
+          </tr>
+		</table>
+    </div>
+    <!-- pm-item end ================================================== -->
+</div>
