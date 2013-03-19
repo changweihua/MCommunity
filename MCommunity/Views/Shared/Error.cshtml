@@ -1,4 +1,6 @@
-﻿@{
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
     Layout = null;
 }
 
@@ -9,8 +11,14 @@
     <title>错误</title>
 </head>
 <body>
-    <h2>
-        抱歉，处理您的请求时出错。
-    </h2>
+    <h2>A General Error Has Occurred</h2>
+
+    @if (Model != null)
+    {
+        <p>@Model.Exception.GetType().Name<br />
+        thrown in @Model.ControllerName @Model.ActionName</p>
+        <p>Error Details:</p>
+        <p>@Model.Exception.Message</p>
+    }
 </body>
 </html>

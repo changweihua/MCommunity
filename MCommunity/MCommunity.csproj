@@ -133,6 +133,8 @@
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\VisitsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GlobalController.cs" />
     <Compile Include="Controllers\LocalAdminController.cs" />
     <Compile Include="Controllers\ArticleCategoryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -141,6 +143,10 @@
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Extensions\RssActionResult.cs" />
+    <Compile Include="Extensions\RssResult.cs" />
+    <Compile Include="Extensions\XmlResult.cs" />
+    <Compile Include="Filters\Exceptions\MCommunityHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1131,6 +1137,10 @@
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\MCommunityError.cshtml" />
+    <Content Include="Views\Global\Error.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MCommunity.Filters.Exceptions;
 using MCommunity.Models;
 using NLite.Data;
 
@@ -17,6 +18,7 @@ namespace MCommunity
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new MCommunityHandleErrorAttribute());
             filters.Add(new HandleErrorAttribute());
         }
 
