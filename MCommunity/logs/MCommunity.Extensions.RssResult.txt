@@ -1,4 +1,0 @@
-2013-03-19 12:45:19.3923 <>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19 => ControllerActionInvoker.InvokeActionResult => RssResult.ExecuteResult 2
-2013-03-19 12:45:58.7105 <>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19 => ControllerActionInvoker.InvokeActionResult => RssResult.ExecuteResult 2
-2013-03-19 12:49:33.0268 <>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19 => ControllerActionInvoker.InvokeActionResult => RssResult.ExecuteResult Test1
-2013-03-19 12:49:33.0408 <>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19 => ControllerActionInvoker.InvokeActionResult => RssResult.ExecuteResult Test2

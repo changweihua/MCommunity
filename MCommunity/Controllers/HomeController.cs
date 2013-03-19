@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MCommunity.Filters;
 
 namespace MCommunity.Controllers
 {
@@ -12,6 +13,7 @@ namespace MCommunity.Controllers
         //
         // GET: /Home/
 
+        [UserTrackerLog] 
         public ActionResult Index()
         {
             return View();

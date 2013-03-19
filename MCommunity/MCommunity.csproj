@@ -147,6 +147,7 @@
     <Compile Include="Extensions\RssResult.cs" />
     <Compile Include="Extensions\XmlResult.cs" />
     <Compile Include="Filters\Exceptions\MCommunityHandleErrorAttribute.cs" />
+    <Compile Include="Filters\UserTrackerLogAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1145,6 +1146,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
