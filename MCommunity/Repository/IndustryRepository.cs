@@ -10,17 +10,17 @@ namespace MCommunity.Repository
     #region 关于
     /*************************************************************************************
      * CLR 版本:	4.0.30319.18034
-     * 类 名 称:	AccountRepository
+     * 类 名 称:	IndustryRepository
      * 机器名称:	LUMIA800
      * 命名空间:	MCommunity.Repository
-     * 文 件 名:	AccountRepository
-     * 创建时间:	2013/3/18 12:24:21
+     * 文 件 名:	IndustryRepository
+     * 创建时间:	2013/3/19 16:13:12
      * 作    者:	常伟华 Changweihua
 	 * 版    权:	本代码版权归常伟华所有 All Rights Reserved (C) 2013 - 2014
      * 签    名:	To be or not, it is not a problem !
      * 网    站:	http://www.cmono.net
      * 邮    箱:	changweihua@outlook.com  
-     * 唯一标识:	25221b22-2474-4556-a4d8-ef7bf705865a  
+     * 唯一标识:	1b87365a-243d-4831-9a9f-1d2a9f1e32ce  
 	 *
 	 * 登录用户:	Changweihua
 	 * 所 属 域:	Lumia800
@@ -35,9 +35,9 @@ namespace MCommunity.Repository
     /// <summary>
     /// 摘要
     /// </summary>
-    public class AccountRepository : Repository<Account>, IAccountRepository
+    public class IndustryRepository : Repository<Industry>, IIndustryRepository
     {
-        public AccountRepository(DbContext db)
+        public IndustryRepository(DbContext db)
             : base(db)
         { }
         

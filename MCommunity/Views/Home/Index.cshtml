@@ -3,28 +3,19 @@
 }
 
 @section Scripts{
-    <style type="text/css">
-        .wellBorder
-        {
-            border-radius: 5px;
-            border:0.1px solid grey;
-            padding:5px 0px 5px 8px;
-        }
-    </style>
+   
 }
 
 
 @section Banner{
-    <div class="blog-banner">
-        <div class="blog-banner-uname">CMONO.NET社区 首页</div>
-    </div>
+    <div class="span12"><h1>CMONO.NET社区 首页</h1></div>
 }
 
 @section TopRight{
     <div class="pull-right">
         <ul class="nav pull-right">
 	        <li>
-	            <a href="@Url.Action("Blog")" >
+	            <a href="@Url.Action("Index", "Blog")" >
 	              	<img src='@Url.Content("~/Content/noportraint.jpg")' class="img-circle" /> &nbsp;Changweihua
 	            </a>
 	        </li>

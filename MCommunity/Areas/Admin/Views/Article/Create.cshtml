@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  MCommunity.Models.Article
+@{
     ViewBag.Title = "Create";
 }
 
@@ -19,57 +20,88 @@
     </script>
 
 }
-                                       
-                <ul class="breadcrumb" style="margin-bottom: 5px;">
-                    <li><a href="/home">首页</a> <span class="divider">/</span></li>
-                    <li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  
-                    <li class="active">发表文章</li>
-                </ul>
-                <div class="post-form-wrapper">
-                	<form action="/admin/post/new-do" method="post" id="entry_form">
-                    	<p class="text-info">标题(必填)</p>
-                        <input type="text" name="title" style="width:615px;"  maxlength="80" placeholder="此处输入文章标题">
-                        分类于
-                          <select name="category" id="entity_category" class="span2">
-									<option value="248" >默认 (0)</option>
-						  </select>
-                          <div>
-                          	<p class="text-info">内容(必填)
-                                <span style="float:right;display: inline-block;">
-                                    <input id="entry_add" type="button" class="btn btn-small btn-primary"  value="发   表" />
-                                    <input id="save_as_draft" type="button" class="btn btn-small btn-primary"  value="存为草稿" />
-                                </span>
-                            </p>
-                          </div>
-                          <textarea  id="uEditor" name="content" style="width:100%;" ></textarea>
-                          <br />
-                          <p>
-                            文章类型：  
-                            <input type="radio" name="postType"  value="0" checked="checked"/> 原创 
-                            <input type="radio" name="postType"  value="1" /> 翻译
-                            <input type="radio" name="postType"  value="2" /> 转帖
-                            <div id="reLink" class="input-prepend inblock hide">
-							  <span class="add-on">原文链接</span>
-							  <input class="span6" type="text" name="reLink" placeholder="此处输入转载原文的链接">
-							</div>
-                          </p>
-                          <script type="text/javascript">
-                            $(function() {
-                                $(":radio[name=postType][value!=2]").click(function() {$("#reLink").hide();});
-                                $(":radio[name=postType][value=2]").click(function() {$("#reLink").show();});
-                            });
-                          </script>
-                          <p>
-                            隐私设置： 
-                            <input type="radio" name="visible"  value="1" checked="checked"/> 对所有人可见 
-                            <input type="radio" name="visible"  value="0" /> 保密(只对自己可见)
-                                 
-                          </p>
-                          <p>
-                            设为置顶： <input type="checkbox" name="asTop" id="checkbox" value="1"/>　
-                            评论设置: <input type="radio" name="canComment" value="1" checked="checked"/>允许评论
-                            <input type="radio" name="canComment" value="0"/>禁止评论
-                          </p>
-                    </form>
-                </div>
+
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="/home">首页</a> <span class="divider">/</span></li>
+    <li><a href="/admin/home">管理</a> <span class="divider">/</span></li>
+    <li class="active">发表文章</li>
+</ul>
+<div class="post-form-wrapper">
+    <form action="/admin/post/new-do" method="post" id="entry_form">
+        <p class="text-info">标题(必填)</p>
+        @Html.TextBoxFor(_ => _.Title, new { @class = "span7", maxlength = "80", placeholder = "此处输入文章标题" })
+        @Html.DropDownListFor(_ => _.CategoryId, ViewBag.Categories as SelectList, new { @class="span2"})
+        <div>
+            <p class="text-info">
+                内容(必填)
+                <span style="float: right; display: inline-block;">
+                    <input data-val="1" type="button" class="btn btn-command btn-medium btn-primary" value="发   表" />
+                    <input data-val="0" type="button" class="btn btn-command btn-medium btn-primary" value="存为草稿" />
+                </span>
+            </p>
+        </div>
+        <textarea id="uEditor" name="content" style="width: 100%;"></textarea>
+        <br />
+        <p>
+            文章类型：  
+            @foreach (MCommunity.Models.ArticleType item in @ViewBag.Types)
+            {
+                <label class="radio inline">
+                    <input type="radio" name="TypeId" id="@item.TypeId" value="@item.TypeId"  />
+                    @item.TypeName 
+                </label>
+            }
+        </p>
+        <script>
+            $(function () {
+                $(":radio[name=TypeId]:first").attr('checked', 'checked');
+            });
+        </script>
+        <p>
+            隐私设置： 
+            <input type="radio" name="IsPublic" value="1" checked="checked" />
+            对所有人可见 
+            <input type="radio" name="IsPublic" value="0" />
+            保密(只对自己可见)
+        </p>
+        <p>
+            设为置顶：
+            <input type="checkbox" name="IsTop" id="checkbox" value="1" />
+            评论设置:
+            <input type="radio" name="IsAllowComment" value="1" checked="checked" />允许评论
+            <input type="radio" name="IsAllowComment" value="0" />禁止评论
+        </p>
+        <p>
+            @Html.HiddenFor(_ => _.IsDraft)
+        </p>
+    </form>
+</div>
+
+<script>
+    $(function () {
+        $('.btn-command').click(function (e) {
+            e.preventDefault();
+            $('#IsDraft').val($(this).attr('data-val'));
+            saveArticle();
+        });
+    });
+
+    function saveArticle() {
+        UEditor.sync();
+        $.ajax({
+        url: '@Url.Action("Create","Article")',
+        cache: false,
+        type: 'POST',
+        data: $('#entry_form').serialize(),
+        success: function (data) {
+            $('#entry_form :input').val('');
+            art.dialog({
+                title: '信息提示',
+                content: data.msg
+            }).time(3000);
+        }
+    });
+    }
+
+</script>
 

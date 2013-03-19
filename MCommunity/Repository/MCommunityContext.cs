@@ -44,25 +44,27 @@ namespace MCommunity.Repository
         //构造dbConfiguration 对象
         static DbConfiguration dbConfiguration = DbConfiguration
                 .Configure(connectionStringName)
-                //.AddClass<Article>()
+                .AddClass<Article>()
                 .AddClass<ArticleCategory>()
                 .AddClass<Province>()
                 .AddClass<Account>()
                 .AddClass<Industry>()
                 .AddClass<Occupation>()
                 .AddClass<WorkYear>()
+                .AddClass<ArticleType>()
                 ;
         public MCommunityContext() : base(dbConfiguration) {
         }
 
         public IDbSet<ArticleCategory> ArticleCategories;
 
-        //public IDbSet<Article> Articles;
+        public IDbSet<Article> Articles;
         public IDbSet<Province> Provinces;
         public IDbSet<Account> Accounts;
 
         public IDbSet<Industry> Industries;
         public IDbSet<Occupation> Occupations;
         public IDbSet<WorkYear> WorkYears;
+        public IDbSet<ArticleType> ArticleTypes;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MCommunity.Models;
+using NLite.Data;
 
 namespace MCommunity.Repository
 {
@@ -34,47 +35,19 @@ namespace MCommunity.Repository
     /// <summary>
     /// 摘要
     /// </summary>
-    public class ArticleCategoryRepository : RepositoryBase<ArticleCategory>
+    public class ArticleCategoryRepository : Repository<ArticleCategory>, IArticleCategoryRepository
     {
-        /// <summary>
-        /// 添加文章分类
-        /// </summary>
-        /// <param name="articleCategory"></param>
-        /// <returns></returns>
-        public override bool Add(ArticleCategory articleCategory)
-        {
-            if (articleCategory == null)
-            {
-                return false;
-            }
-            int count = 0;
-            using (var db = new MCommunityContext())
-            {
-                count = db.ArticleCategories.Insert(articleCategory);
-            }
+        public ArticleCategoryRepository(DbContext db)
+            : base(db)
+        { }
 
-            if (count > 0)
+        public bool Delete(int categoryId)
+        {
+            using (context)
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                return context.Set<ArticleCategory>().Delete(_ => _.CategoryId == categoryId) == 1 ? true : false;
             }
         }
-
-        /// <summary>
-        /// 文章分类列表
-        /// </summary>
-        /// <returns></returns>
-        public IQueryable<ArticleCategory> List()
-        {
-            IQueryable<ArticleCategory> list;
-            using (var db = new MCommunityContext())
-            {
-                list = db.ArticleCategories;
-            }
-            return list;
-        }
+        
     }
 }

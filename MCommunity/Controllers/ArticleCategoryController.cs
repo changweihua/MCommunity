@@ -10,36 +10,28 @@ namespace MCommunity.Controllers
 {
     public class ArticleCategoryController : Controller
     {
-        private ArticleCategoryRepository repository;
-        //
-        // GET: /ArticleCategory/
+        private IRepository<ArticleCategory> articleCategoryRepository;
+
+        public ArticleCategoryController()
+        {
+            articleCategoryRepository = new ArticleCategoryRepository(new MCommunityContext());
+        }
 
         public ActionResult Index()
         {
-            repository = new ArticleCategoryRepository();
-            IQueryable<ArticleCategory> articleCategoryies;
-            // repository.Add(new ArticleCategory { SortNumber = 1, CategoryName = "2222" });
-            articleCategoryies = repository.List();
-
-            return View(articleCategoryies);
+            return View();
         }
 
-        public ActionResult List()
+        public ActionResult GetJson()
         {
-            repository = new ArticleCategoryRepository();
-            IQueryable<ArticleCategory> articleCategoryies;
-            articleCategoryies = repository.List();
-
-            return Json(articleCategoryies, JsonRequestBehavior.AllowGet);
+            var articleCategoryies = articleCategoryRepository.List();
+            return Json(new { categories = articleCategoryies }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public ActionResult New(ArticleCategory category)
         {
-            repository = new ArticleCategoryRepository();
-
-            bool flag = repository.Add(category);
-
+            var flag = true;
             return Json(flag);
         }
 

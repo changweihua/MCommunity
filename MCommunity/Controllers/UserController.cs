@@ -25,7 +25,7 @@ namespace MCommunity.Controllers
             //    provinces = db.Provinces.ToList();
             //    //provinces = db.Provinces.Select(x => new Province { ProvinceId = x.ProvinceId, ProvinceName = x.ProvinceName }).ToList();
             //}
-            provinces = provinceRepository.List().ToList();
+            provinces = provinceRepository.List();
             ViewBag.Provinces = new SelectList(provinces, "ProvinceId", "ProvinceName");
             return View();
         }
@@ -52,11 +52,6 @@ namespace MCommunity.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            //using (var db = new MCommunityContext())
-            //{
-            //    provinces = db.Provinces.ToList();
-            //    //provinces = db.Provinces.Select(x => new Province { ProvinceId = x.ProvinceId, ProvinceName = x.ProvinceName }).ToList();
-            //}
             var provinces = provinceRepository.List();
             ViewBag.Provinces = new SelectList(provinces, "ProvinceId", "ProvinceName");
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using NLite;
 using NLite.Data;
 
 namespace MCommunity.Models
@@ -31,79 +32,156 @@ namespace MCommunity.Models
      ************************************************************************************/
     #endregion
 
+    [Table(Name="tbArticle")]
     public class Article
     {
         /// <summary>
         /// 文章编号
         /// </summary>
-        public int Id { get; set; }
+        /// 
+        [Id(Name="ArticleId", IsDbGenerated=true)]
+        public int ArticleId { get; set; }
+        /// <summary>
+        /// 分类编号
+        /// </summary>
+        /// 
+        [Column(Name = "CategoryId")]
+        public int CategoryId { get; set; }
+        /// <summary>
+        /// 类型编号
+        /// </summary>
+        /// 
+        [Column(Name = "TypeId")]
+        public int TypeId { get; set; }
         /// <summary>
         /// 文章标题
         /// </summary>
+        /// 
+        [Column(Name = "Title")]
         public string Title { get; set; }
         /// <summary>
         /// 文章内容
         /// </summary>
+        /// 
+         [Column(Name = "Content")]
         public string Content { get; set; }
         /// <summary>
         /// 文章摘要
         /// </summary>
+        /// 
+         [Column(Name = "Summary")]
         public string Summary { get; set; }
         /// <summary>
         /// 作者编号
         /// </summary>
+        /// 
+        [Column(Name = "AuthorId")]
         public int AuthorId { get; set; }
         /// <summary>
         /// 评论
         /// </summary>
-        public int RemarkId { get; set; }
+        /// 
+        [Column(Name = "IsDraft")]
+        public int IsDraft { get; set; }
         /// <summary>
         /// 文章所属类别
         /// </summary>
-        public int CategoryId { get; set; }
+        /// 
+        [Column(Name = "IsPublic")]
+        public int IsPublic { get; set; }
         /// <summary>
         /// 是否精华
         /// </summary>
-        public int IsEssence { get; set; }
+        /// 
+        [Column(Name = "IsAllowComment")]
+        public int IsAllowComment { get; set; }
         /// <summary>
         /// 是否推荐
         /// </summary>
-        public int IsRecommand { get; set; }
-        /// <summary>
-        /// 博客地址
-        /// </summary>
-        public string LinkUrl { get; set; }
-        /// <summary>
-        /// 状态
-        /// </summary>
-        public int Status { get; set; }
+        /// 
+        [Column(Name = "IsTop")]
+        public int IsTop { get; set; }
         /// <summary>
         /// 发布时间
         /// </summary>
-        public DateTime PublishTime { get; set; }
+        /// 
+        [Column(Name = "PublishDate")]
+        public string PublishDate { get; set; }
         /// <summary>
         /// 修改时间
         /// </summary>
-        public DateTime ModifyTime { get; set; }
+        /// 
+        [Column(Name = "CreateDate")]
+        public string CreateDate { get; set; }
         /// <summary>
         /// 标签
         /// </summary>
+        /// 
+        [Column(Name = "Tag")]
         public string Tag { get; set; }
         /// <summary>
         /// 博客描述
         /// </summary>
-        public string BlogDescription { get; set; }
+        /// 
+        [Column(Name = "Score")]
+        public int Score { get; set; }
+        /// <summary>
+        /// 博客描述
+        /// </summary>
+        /// 
+        [Column(Name = "ScoreCount")]
+        public int ScoreCount { get; set; }
+        /// <summary>
+        /// 博客描述
+        /// </summary>
+        /// 
+        [Column(Name = "PraiseCount")]
+        public int PraiseCount { get; set; }
+
+        [Association(ThisKey = "CategoryId", OtherKey = "CategoryId")]
+        public ArticleCategory Category { get; set; }
+
+        [Association(ThisKey = "TypeId", OtherKey = "TypeId")]
+        public ArticleType Type { get; set; }
+
+    }
+
+    public class CreateModel
+    {
+        public int AuthorId { get; set; }
+        public int CategoryId { get; set; }
+        public int TypeId { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Content { get; set; }
+        public int IsAllowComment { get; set; }
+        public int IsPublic { get; set; }
+        public int IsDraft { get; set; }
+        public int IsTop { get; set; }
     }
 
     [Table(Name = "tbArticleCategory")]
     public class ArticleCategory
     {
-        [Id(IsDbGenerated = true)]
+        [Id(Name = "CategoryId", IsDbGenerated = true)]
         public int CategoryId { get; set; }
         [Column(Name = "CategoryName")]
         public string CategoryName { get; set; }
         [Column(Name = "SortOrder")]
         public int SortOrder { get; set; }
+    }
+
+    [Table(Name = "tbArticleType")]
+    public class ArticleType
+    {
+        [Id(Name = "TypeId", IsDbGenerated = true)]
+        public int TypeId { get; set; }
+        [Column(Name = "TypeName")]
+        public string TypeName { get; set; }
+    }
+
+    public class ArticleComment
+    {
     }
 
 }

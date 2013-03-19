@@ -2,93 +2,99 @@
     ViewBag.Title = "Index";
 }
 
+@section Scripts{
+
+}
+
 @section Banner{
-    <div class="blog-banner">
-        <div class="blog-banner-uname">
-            这个人很懒,什么都没留下.
-        </div>
+    <div class="span12">
+        <h1>这个人很懒,什么都没留下. </h1>
     </div>
 }
 
 @section TopRight{
     <div class="pull-right">
         <ul class="nav pull-right">
-	        <li>
-	            <a href="/Admin/Index" >
-	              	<img src='@Url.Content("~/Content/logo.ico")' class="img-circle" /> &nbsp;Changweihua
-	            </a>
-	        </li>
-	        <li>
-                <a id='remind_count'><span class="badge badge-info">1</span></a>	              
-	        </li>
-	        <li>
-                <a href='/Admin/Message' target='_blank' style='padding-left:10px;padding-right:5px;'><span style='color: #990000;font-size:13px;'><img src='@Url.Content("~/Content/new.gif")' /> 您有<strong>1</strong>条新消息</span></a>	              
-	        </li>
-	        <li class="dropdown">
-	            <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:5px;padding-right:5px;">
-	                <i class="icon-signal"></i>&nbsp;我的博客
-	            </a>
-	            <ul class="dropdown-menu" role="menu">
-	                <li><a href="/Admin/Home" target="_blank"><i class="icon-home"></i>&nbsp;个人中心</a></li>
-	                <li><a href="/Admin/Article" target="_blank"><i class="icon-file"></i>&nbsp;我的文章</a></li>
-	                <li><a href="/Admin/ArticleCategory" target="_blank"><i class="icon-tags"></i>&nbsp;博客分类</a></li>
-	                <li><a href="/Admin/Comment" target="_blank"><i class="icon-comment"></i>&nbsp;博客评论</a></li>
-	                <li><a href="/Admin/Concern" target="_blank"><i class="icon-eye-open"></i>&nbsp;我的关注</a></li>
-	                <li><a href="/Admin/Visit" target="_blank"><i class="icon-road"></i>&nbsp;访客记录</a></li>
-	                <li><a href="/Admin/Favorite" target="_blank"><i class="icon-heart"></i>&nbsp;我的收藏</a></li>
-	                <li><a href="/Admin/Portraint" target="_blank"><i class="icon-picture"></i>&nbsp;我的头像</a></li>
-	                <li><a href="/Admin/Privacy" target="_blank"><i class="icon-lock"></i>&nbsp;隐私设置</a></li>
-	                <li><a href="/Admin/Profile" target="_blank"><i class="icon-user"></i>&nbsp;个人资料</a></li>
-	            </ul>
-	        </li>
-	        <li><a href="/Admin/Logout" class="logout"><i class="icon-off"></i>&nbsp;退出</a></li>
-	    </ul>	</div>
+            <li>
+                <a href="@Url.Action("Index", "Blog")">
+                    <img src='@Url.Content("~/Content/logo.ico")' class="img-circle" />
+                    &nbsp;Changweihua
+                </a>
+            </li>
+            <li>
+                <a id='remind_count'><span class="badge badge-info">1</span></a>
+            </li>
+            <li>
+                <a href='/Admin/Message' target='_blank' style='padding-left: 10px; padding-right: 5px;'><span style='color: #990000; font-size: 13px;'>
+                    <img src='@Url.Content("~/Content/new.gif")' />
+                    您有<strong>1</strong>条新消息</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 5px; padding-right: 5px;">
+                    <i class="icon-signal"></i>&nbsp;我的博客
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/Admin/Home" target="_blank"><i class="icon-home"></i>&nbsp;个人中心</a></li>
+                    <li><a href="/Admin/Article" target="_blank"><i class="icon-file"></i>&nbsp;我的文章</a></li>
+                    <li><a href="/Admin/ArticleCategory" target="_blank"><i class="icon-tags"></i>&nbsp;博客分类</a></li>
+                    <li><a href="/Admin/Comment" target="_blank"><i class="icon-comment"></i>&nbsp;博客评论</a></li>
+                    <li><a href="/Admin/Concern" target="_blank"><i class="icon-eye-open"></i>&nbsp;我的关注</a></li>
+                    <li><a href="/Admin/Visit" target="_blank"><i class="icon-road"></i>&nbsp;访客记录</a></li>
+                    <li><a href="/Admin/Favorite" target="_blank"><i class="icon-heart"></i>&nbsp;我的收藏</a></li>
+                    <li><a href="/Admin/Portraint" target="_blank"><i class="icon-picture"></i>&nbsp;我的头像</a></li>
+                    <li><a href="/Admin/Privacy" target="_blank"><i class="icon-lock"></i>&nbsp;隐私设置</a></li>
+                    <li><a href="/Admin/Profile" target="_blank"><i class="icon-user"></i>&nbsp;个人资料</a></li>
+                </ul>
+            </li>
+            <li><a href="/Admin/Logout" class="logout"><i class="icon-off"></i>&nbsp;退出</a></li>
+        </ul>
+    </div>
 }
 
 <div class="row-fluid">
     <div class="span3">
         <div class="row-fluid">
             <div class="span12 well">
-                <div class="media front-left-head" style="margin-top:2px;margin-bottom:5px;">
+                <div class="media front-left-head" style="margin-top: 2px; margin-bottom: 5px;">
                     <a class="pull-left thumbnail" href="/blog/changvh">
-                        <img class="media-object" style="width: 135px; height: 135px; " src="http://bebop.qiniudn.com/images/noportraint.jpg" >
+                        <img class="media-object" style="width: 135px; height: 135px;" src="http://bebop.qiniudn.com/images/noportraint.jpg">
                     </a>
                     <div class="media-body">
                         <p>
                             <a href='/blog/changvh' target='_blank' title='正在看 Changweihua 的博客'>
-                                <span class='badge badge-info userstaus-read' >
-                                    <i class='icon-eye-open icon-white'></i> 在看博客
+                                <span class='badge badge-info userstaus-read'>
+                                    <i class='icon-eye-open icon-white'></i>在看博客
                                 </span>
-                            </a>                
+                            </a>
                         </p>
                         <p>
                             <a href="javascript:follow(247,true)"><i class="icon-headphones"></i>&nbsp;添加关注</a>
                         </p>
                         <p><a href="javascript:send_msg(247)"><i class="icon-envelope"></i>&nbsp;发送消息</a></p>
                         <p><a href="/blog/changvh/follows" title="所有的关注"><i class="icon-user"></i>&nbsp;关注</a><a href="/blog/changvh/fans" title="所有的粉丝">粉丝</a></p>
-                        <p><a href="/blog/changvh/feeds"  title="用户最近的动态"><i class="icon-volume-up"></i>&nbsp;最近动态</a></p>
+                        <p><a href="/blog/changvh/feeds" title="用户最近的动态"><i class="icon-volume-up"></i>&nbsp;最近动态</a></p>
                     </div>
                     <p class="front-left-uname"><em>Changweihua</em></p>
-                    <table  class="muted">
-              	        <tr>
-                	        <td width="130px">城市：江苏 镇江</td>
+                    <table class="muted">
+                        <tr>
+                            <td width="130px">城市：江苏 镇江</td>
                             <td>浏览：	81次</td>
                         </tr>
                         <tr>
-                	        <td>性别：帅哥</td>
-                	        <td>登录：	<span class="timeago" title="2013-03-17 21:11:37"></span></td>
+                            <td>性别：帅哥</td>
+                            <td>登录：	<span class="timeago" title="2013-03-17 21:11:37"></span></td>
                         </tr>
                     </table>
-                </div>            </div>
+                </div>
+            </div>
         </div>
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 最近访客</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>最近访客</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
@@ -96,11 +102,10 @@
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 博客分类</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>博客分类</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
@@ -108,11 +113,10 @@
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 评论排行</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>评论排行</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
@@ -120,11 +124,10 @@
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 阅读排行</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>阅读排行</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
@@ -132,11 +135,10 @@
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 我的关注</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>我的关注</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
@@ -144,52 +146,75 @@
         <div class="row-fluid">
             <div class="alert alert-info alert-block span12">
                 <a class="close"><i class="icon-refresh"></i></a>
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 我的粉丝</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>我的粉丝</h4>
                 <hr />
                 <div class="span12 alert-body">
                     <ul id="newsList" class="unstyled">
-
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="span9">
+    <div id="articleArea" class="span9">
         <div class="row-fluid">
             <div class="alert alert-block alert-info span12">
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 文章标题</h4>
+                <h4 class="alert-heading"><i class="icon-bullhorn"></i>文章标题</h4>
                 <div class="span12 alert-body">
                     文章摘要
                 </div>
-                <p><i class="icon-user"></i> 作者 <span class="label label-info">作者</span> &emsp;&emsp;&emsp; <i class="icon-book"></i> 分类  <span class="label label-info">啊啊啊啊</span> &emsp;&emsp;&emsp; <i class="icon-tags"></i> 标签 <span class="label label-info"></span>   &emsp;&emsp;&emsp; <i class="icon-comment"></i> 评论 <span class="badge badge-info">10</span> &emsp;&emsp;&emsp; <i class="icon-star"></i> 评分 <span id="score" class="badge badge-info"></span></p>
+                <p><i class="icon-user"></i>作者 <span class="label label-info">作者</span> &emsp;&emsp;&emsp; <i class="icon-book"></i>分类  <span class="label label-info">啊啊啊啊</span> &emsp;&emsp;&emsp; <i class="icon-tags"></i>标签 <span class="label label-info"></span>&emsp;&emsp;&emsp; <i class="icon-comment"></i>评论 <span class="badge badge-info">10</span> &emsp;&emsp;&emsp; <i class="icon-star"></i>评分 <span id="score" class="badge badge-info"></span></p>
             </div>
         </div>
-        <div class="row-fluid">
-            <div class="alert alert-block alert-info span12">
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 文章标题</h4>
-                <div class="span12 alert-body">
-                    文章摘要
-                </div>
-                <p><i class="icon-user"></i> 作者 <span class="label label-info">作者</span> &emsp;&emsp;&emsp; <i class="icon-book"></i> 分类  <span class="label label-info">啊啊啊啊</span> &emsp;&emsp;&emsp; <i class="icon-tags"></i> 标签 <span class="label label-info"></span>   &emsp;&emsp;&emsp; <i class="icon-comment"></i> 评论 <span class="badge badge-info">10</span> &emsp;&emsp;&emsp; <i class="icon-star"></i> 评分 <span id="score" class="badge badge-info"></span></p>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="alert alert-block alert-info span12">
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 文章标题</h4>
-                <div class="span12 alert-body">
-                    文章摘要
-                </div>
-                <p><i class="icon-user"></i> 作者 <span class="label label-info">作者</span> &emsp;&emsp;&emsp; <i class="icon-book"></i> 分类  <span class="label label-info">啊啊啊啊</span> &emsp;&emsp;&emsp; <i class="icon-tags"></i> 标签 <span class="label label-info"></span>   &emsp;&emsp;&emsp; <i class="icon-comment"></i> 评论 <span class="badge badge-info">10</span> &emsp;&emsp;&emsp; <i class="icon-star"></i> 评分 <span id="score" class="badge badge-info"></span></p>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="alert alert-block alert-info span12">
-                <h4 class="alert-heading"><i class="icon-bullhorn"></i> 文章标题</h4>
-                <div class="span12 alert-body">
-                    文章摘要
-                </div>
-                <p>icon-time<span class="label label-info">发表时间</span> <i class="icon-user"></i> 作者 <span class="label label-info">作者</span> &emsp;&emsp;&emsp; <i class="icon-book"></i> 分类  <span class="label label-info">啊啊啊啊</span> &emsp;&emsp;&emsp; <i class="icon-tags"></i> 标签 <span class="label label-info"></span>   &emsp;&emsp;&emsp; <i class="icon-comment"></i> 评论 <span class="badge badge-info">10</span> &emsp;&emsp;&emsp; <i class="icon-star"></i> 评分 <span id="score" class="badge badge-info"></span></p>
-            </div>
-        </div>
+        
     </div>
 </div>
+
+
+<script type="text/x-jsrender" id="articleTemplate">
+    {{for articles}}
+        <div class="row-fluid">
+            <div class="alert alert-block alert-info span12">
+                <h4 class="alert-heading">
+                    {{if isTop == 1}}
+                        <i class="icon-hand-up"></i>
+                    {{else}}
+                        <i class="icon-bullhorn"></i>
+                    {{/if}}
+                    {{:title}}
+                </h4>
+                <div class="span12 alert-body">
+                    {{:summary}}
+                </div>
+                <p>
+                    <i class="icon-user"></i>作者 <span class="label label-info">{{:author}}</span> &emsp;&emsp;&emsp; 
+                    <i class="icon-book"></i>分类  <span class="label label-info">{{:category}}</span> &emsp;&emsp;&emsp; 
+                    <i class="icon-book"></i>类型  <span class="label label-info">{{:type}}</span> &emsp;&emsp;&emsp; 
+                    <i class="icon-tags"></i>标签 <span class="label label-info">{{:tag}}</span> &emsp;&emsp;&emsp; 
+                    <i class="icon-comment"></i>评论 <span class="badge badge-info">{{:comments}}</span> &emsp;&emsp;&emsp; 
+                    <i class="icon-star"></i>评分 <span id="score" class="badge badge-info">{{:score}}</span>
+                </p>
+            </div>
+        </div>                   
+    {{/for}}
+</script>
+<script>
+    $(function () {
+        loadArticle();
+    });
+
+    function loadArticle()
+    {
+        $.ajax({
+            url: '@Url.Action("GetArticle")',
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                $('#articleArea').empty();
+                var html = $("#articleTemplate").render(data);
+                //Insert into Container
+                $("#articleArea").append(html);
+            }
+        });
+    }
+
+</script>
