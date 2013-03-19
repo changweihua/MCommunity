@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using MCommunity.Models;
@@ -43,18 +44,25 @@ namespace MCommunity.Repository
         //构造dbConfiguration 对象
         static DbConfiguration dbConfiguration = DbConfiguration
                 .Configure(connectionStringName)
-                //.SetSqlLogger(() => new SqlLog(Console.Out))
                 //.AddClass<Article>()
                 .AddClass<ArticleCategory>()
-                //.AddClass<Province>()
-                //.AddClass<User>()
+                .AddClass<Province>()
+                .AddClass<Account>()
+                .AddClass<Industry>()
+                .AddClass<Occupation>()
+                .AddClass<WorkYear>()
                 ;
-        public MCommunityContext() : base(dbConfiguration) { }
+        public MCommunityContext() : base(dbConfiguration) {
+        }
 
         public IDbSet<ArticleCategory> ArticleCategories;
 
         //public IDbSet<Article> Articles;
-        //public IDbSet<Province> Provinces;
-        //public IDbSet<User> Users;
+        public IDbSet<Province> Provinces;
+        public IDbSet<Account> Accounts;
+
+        public IDbSet<Industry> Industries;
+        public IDbSet<Occupation> Occupations;
+        public IDbSet<WorkYear> WorkYears;
     }
 }

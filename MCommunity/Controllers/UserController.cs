@@ -4,65 +4,118 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MCommunity.Models;
+using MCommunity.Repository;
 
 namespace MCommunity.Controllers
 {
     public class UserController : Controller
     {
-        //
-        // GET: /User/
-        public ActionResult PasswordReset()
+        IRepository<Province> provinceRepository;
+
+        public UserController()
         {
-            return View();
+            provinceRepository = new ProvinceRepository(new MCommunityContext());
         }
 
-        public ActionResult PasswordForget()
+        public ActionResult Register()
         {
-            return View();
-        }
-
-        public ActionResult PortraintReset()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult PortraintReset(int id, FormCollection collection)
-        {
-            var oldData = new { Id = 1, Portraint = 1 };
-            if (TryUpdateModel(oldData, "", collection.AllKeys, new string[] { "ID", "Name" }))
-            {
-            }
-
-            return View(oldData);
-        }
-
-        [HttpPost]
-        public ActionResult PasswordForget(User user)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult PasswordReset(ChangePasswordModel model)
-        {
-            //bool flag = true;
-            //if (ModelState.IsValid)
+            IEnumerable<Province> provinces = null;
+            //using (var db = new MCommunityContext())
             //{
-            //    return Json(flag);
+            //    provinces = db.Provinces.ToList();
+            //    //provinces = db.Provinces.Select(x => new Province { ProvinceId = x.ProvinceId, ProvinceName = x.ProvinceName }).ToList();
             //}
-            //else 
+            provinces = provinceRepository.List().ToList();
+            ViewBag.Provinces = new SelectList(provinces, "ProvinceId", "ProvinceName");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterModel model)
+        {
+            //IList<Province> provinces = null;
+
+            //if (HttpContext.Session["VerificationCode"] == null || string.Compare(model.CheckCode, HttpContext.Session["VerificationCode"].ToString(), true) != 0)
             //{
-            //    return Json(ModelState.ToList());
+            //    ModelState.AddModelError("CheckCode", "错误");
+            //    return View(model);
             //}
 
-            bool flag = true;
-            if (ModelState.IsValid)
+            var flag = TryUpdateModel(model);
+            if (flag)
             {
-                return Json(flag);
+                model.CityId = 1;
+                using (var db = new MCommunityContext())
+                {
+                    db.Accounts.Insert(new Account { AccountName = model.AccountName, CityId = model.CityId, ProvinceId = model.ProvinceId, Email = model.Email, JoinDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), Gender = model.Gender, NickName = model.NickName, Password = model.Password });
+                }
+                return RedirectToAction("Index", "Home");
             }
+
+            //using (var db = new MCommunityContext())
+            //{
+            //    provinces = db.Provinces.ToList();
+            //    //provinces = db.Provinces.Select(x => new Province { ProvinceId = x.ProvinceId, ProvinceName = x.ProvinceName }).ToList();
+            //}
+            var provinces = provinceRepository.List();
+            ViewBag.Provinces = new SelectList(provinces, "ProvinceId", "ProvinceName");
+
             return View(model);
         }
+
+
+        //public ActionResult PasswordReset()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult PasswordForget()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult PortraintReset()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult PortraintReset(int id, FormCollection collection)
+        //{
+        //    var oldData = new { Id = 1, Portraint = 1 };
+        //    if (TryUpdateModel(oldData, "", collection.AllKeys, new string[] { "ID", "Name" }))
+        //    {
+        //    }
+
+        //    return View(oldData);
+        //}
+
+        //[HttpPost]
+        //public ActionResult PasswordForget(User user)
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult PasswordReset(ChangePasswordModel model)
+        //{
+        //    //bool flag = true;
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    return Json(flag);
+        //    //}
+        //    //else 
+        //    //{
+        //    //    return Json(ModelState.ToList());
+        //    //}
+
+        //    bool flag = true;
+        //    if (ModelState.IsValid)
+        //    {
+        //        return Json(flag);
+        //    }
+        //    return View(model);
+        //}
 
     }
 }

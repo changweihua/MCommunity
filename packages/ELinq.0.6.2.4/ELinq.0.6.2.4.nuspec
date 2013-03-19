@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ELinq</id>
+    <version>0.6.2.4</version>
+    <title>ELinq</title>
+    <authors>netcasewqs</authors>
+    <owners>netcasewqs</owners>
+    <licenseUrl>http://elinq.codeplex.com/license</licenseUrl>
+    <projectUrl>http://elinq.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ELinq 是一个轻量简单易用的开源Linq ORM数据访问组件，支持Nullable类型和枚举类型，对Linq的谓词提供了完美的支持，支持根据实体类自动建库建表建关系，支持根据数据库通过T4模版自动生成实体代码，旨在让绝大部份的主流数据库都使用 Linq 来进行程序开发，让开发人员访问数据库从SQL中解放出来，易学易用上手快，配置简单，并且提供了源代码下载，方便定制。支持多数据库，目前支持Access、SQLServer、SqlCE、SQLite、MySQL、ORACLE，未来还会支持更多的数据库。</description>
+    <summary />
+    <releaseNotes>ELinq 更新日志:http://www.cnblogs.com/netcasewqs/archive/2012/12/17/2821507.html</releaseNotes>
+    <copyright />
+    <language />
+    <tags>ELinq, ORM Linq NLite ObjectRelationalMapping DAL SQL DB POCO</tags>
+    <dependencies>
+      <dependency id="NLite" version="0.9.5.7" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="ELinq.dll" />
+    </references>
+  </metadata>
+</package>

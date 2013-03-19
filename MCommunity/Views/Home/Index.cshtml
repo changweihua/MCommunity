@@ -2,6 +2,16 @@
     ViewBag.Title = "CMONO.NET社区";
 }
 
+@section Scripts{
+    <style type="text/css">
+        .wellBorder
+        {
+            border-radius: 5px;
+            border:0.1px solid grey;
+            padding:5px 0px 5px 8px;
+        }
+    </style>
+}
 
 
 @section Banner{
@@ -14,7 +24,7 @@
     <div class="pull-right">
         <ul class="nav pull-right">
 	        <li>
-	            <a href="/Admin/Index" >
+	            <a href="@Url.Action("Blog")" >
 	              	<img src='@Url.Content("~/Content/noportraint.jpg")' class="img-circle" /> &nbsp;Changweihua
 	            </a>
 	        </li>
@@ -45,40 +55,69 @@
 	    </ul>	</div>
 }
 
-<div class="span3" style="margin-left:0px;"><div class="row-fluid">
-        <div>
-            <blockquote>
-                <p><img src="@Url.Content("~/Content/group.png")">&nbsp;&nbsp;<strong>博客文章列表</strong></p>
-            </blockquote>
-        </div>
-    <!-- 用户 -->
-    <div class="well">
-        <p>
-            <h6><img src="@Url.Content("~/Content/aaa.png")" >&nbsp;&nbsp;<a href="/blog/skywalker" >@@常伟华</a></h6>
-        </p>
-        <a class="pull-left" href="/blog/skywalker" style="width:45px;height:45px;" title="常伟华" target="_blank">
-            <img src="@Url.Content("~/Content/self.png")" class="img-circle">
-        </a>
-        <p>&nbsp;&nbsp;
-            <span class='badge userstatus-offline' title='用户不在线'><i class='icon-user icon-white'></i> 现在离线</span> 
-        </p>
-        <p class="muted">&nbsp;&nbsp;登录：<span class="timeago muted" title="2013-01-20 18:23:36"></span></p>
-        <p>            <button class="btn btn-primary"><i class="icon-envelope"></i> 有问题请给我留言</button>
-        </p>    </div>
-    <div class="well">
-                
-    </div>
-</div></div>
-
-<div class="span4" style="margin-left:45px;margin-right:15px;">
+<div class="row-fluid">
+<div class="span3">
     <div class="row-fluid">
-        <div>
-            <blockquote>
-                <p><img src="@Url.Content("~/Content/volume_up.png")">&nbsp;&nbsp;<strong>博客文章列表</strong></p>
-            </blockquote>
+        <div class="span12">
+            <div>
+                <blockquote>
+                    <p><img src="@Url.Content("~/Content/group.png")">&nbsp;&nbsp;<strong>博客文章列表</strong></p>
+                </blockquote>
+            </div>
+            <!-- 用户 -->
+            <div class="well">
+                <p>
+                    <h6><img src="@Url.Content("~/Content/aaa.png")" >&nbsp;&nbsp;<a href="/blog/skywalker" >@@常伟华</a></h6>
+                </p>
+                <a class="pull-left" href="/blog/skywalker" style="width:45px;height:45px;" title="常伟华" target="_blank">
+                    <img src="@Url.Content("~/Content/self.png")" class="img-circle">
+                </a>
+                <p>&nbsp;&nbsp;
+                    <span class='badge userstatus-offline' title='用户不在线'><i class='icon-user icon-white'></i> 现在离线</span> 
+                </p>
+                <p class="muted">&nbsp;&nbsp;登录：<span class="timeago muted" title="2013-01-20 18:23:36"></span></p>
+                <p>                    <button class="btn btn-primary"><i class="icon-envelope"></i> 有问题请给我留言</button>
+                </p>            </div>
+        
+            <div class="media well">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="@Url.Content("~/Content/self.png")">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">现在在线</h4>
+                    登录：  @DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")
+                </div>
+            </div>
+            <div class="media well">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="@Url.Content("~/Content/self.png")">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">现在在线</h4>
+                    登录：  @DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") 15分钟前
+                </div>
+            </div>
         </div>
-        <div class="well">
-                用户最近动态
+    </div>
+</div>
+
+<div class="span4">
+    <div class="row-fluid">
+        <div class="span12">
+            <div>
+                <blockquote>
+                    <p><img src="@Url.Content("~/Content/conversation.png")">&nbsp;&nbsp;<strong>用户最近动态</strong></p>
+                </blockquote>
+            </div>
+            <div class="media well">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="@Url.Content("~/Content/self.png")">
+                </a>
+                <div class="media-body">
+                    <p class="media-heading"><a href="">@@作者 </a> 发表了博客文章<a href="">文章名称</a></p>
+                    登录：  @DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") 15分钟前
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -87,7 +126,7 @@
     <div class="row-fluid">
         <div>
             <blockquote>
-                <p><img src="@Url.Content("~/Content/note.png")">&nbsp;&nbsp;<strong>博客文章列表</strong></p>
+                <p><img src="@Url.Content("~/Content/volume_up.png")">&nbsp;&nbsp;<strong>公告</strong></p>
             </blockquote>
         </div>
         <div class="well">
@@ -103,11 +142,27 @@
     <div class="row-fluid">
         <div>
             <blockquote>
-                <p><img src="@Url.Content("~/Content/conversation.png")">&nbsp;&nbsp;<strong>博客文章列表</strong></p>
+                <p><i class="icon-leaf"></i>&nbsp;&nbsp;<strong>博客文章列表</strong></p>
             </blockquote>
         </div>
         <div class="well">
-                 博客文章列表
-        </div>
+            <p><i class="icon-file"></i> <a href="#">【公告】添加三个测试帐户 麻烦帮忙投个票 谢啦</a></p>
+            <p>
+                <span>
+                    <span class="timeago muted" title="2013-01-19 09:02:04">2013-01-19 09:02:04</span>
+                    <span class="muted">by @@常伟华</span>
+                </span>
+                <span class="muted pull-right">0回/106阅</span>
+            </p>        </div>
+        <div class="well">
+            <p><i class="icon-file"></i> <a href="#">【公告】添加三个测试帐户 麻烦帮忙投个票 谢啦</a></p>
+            <p>
+                <span>
+                    <span class="timeago muted" title="2013-01-19 09:02:04">2013-01-19 09:02:04</span>
+                    <span class="muted">by @@常伟华</span>
+                </span>
+                <span class="muted pull-right">0回/106阅</span>
+            </p>        </div>
     </div>
 </div>
+    </div>

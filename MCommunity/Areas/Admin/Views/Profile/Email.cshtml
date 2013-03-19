@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Email";
+}
+
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+					<li><a href="/blog/changvh">首页</a> <span class="divider">/</span></li>
+					<li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  
+					<li class="active">更换邮箱</li>
+				</ul>
+				<div class="back-right-inner">
+					<!-- email start ================================================== -->
+						<div class="box" style="padding:20px;">
+							<div class="alert alert-info divcenter" style="width:450px;">
+								 系统将将向您的新邮箱发送一封验证邮件,  请点击邮件中的链接来完成修改.<br>
+								 如果没收到邮件,请确认是否填写正确的邮箱地址,   或者在垃圾箱里检查一下.
+							</div>
+							<form class="form-horizontal" style="margin-left:80px;padding-top:20px;">
+								<div class="control-group">
+								  <label class="control-label muted">当前邮箱</label>
+								  <div class="controls">
+									<span class="span4 uneditable-input"> dyelcwh@yeah.net </span>
+								  </div>
+								</div>
+								<div class="control-group">
+								  <label class="control-label muted" for="newEmail">新邮箱</label>
+								  <div class="controls">
+									<input type="text" id="newEmail" class="span4" name="email">
+								  </div>
+								</div>
+								<div class="control-group">
+								  <label class="control-label muted" for="vcode">验证码</label>
+								  <div class="controls">
+									<input type="text" name="vcode" id="vcode" style="width:110px">
+									<span id="oK"></span>
+								  </div>
+								</div>
+								<div class="control-group">
+								  <div class="controls">
+									<span style='border: 2px solid #CCC;display:inline-block;'>
+										<a href="javascript:change_vcode()" id="vcode_change">
+											<img src="/common/VerificationCode" title="点击更换图片" id="v_code_image" style="border: 0px;">
+										</a>
+										<script type="text/javascript">
+											function change_vcode() {
+											    $('#v_code_image').attr('src', "/common/VerificationCode?r=" + Math.random(1000));
+											}
+										</script>
+									</span>
+								  </div>
+								</div>
+								<div class="control-group">
+								  <div class="controls">
+									<input type="button" class="btn btn-primary" id="chg_email_bt" value="保存修改">
+								  </div>
+								</div>
+							  </form>
+						</div>
+					<!-- email end ================================================== -->
+				</div>
+

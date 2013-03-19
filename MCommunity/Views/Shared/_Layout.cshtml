@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Content/favicon.ico")" />
-    @*<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />*@  
     
     <link href="@Url.Content("~/Content/bootstrap/default/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap/default/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
@@ -19,6 +19,7 @@
     <script src="@Url.Content("~/Content/bootstrap/default/js/bootstrap.min.js")" type="text/javascript"></script>
     @*<script src="@Url.Content("~/Content/bootstrap/fuelux/all.min.js")" type="text/javascript"></script>*@
 
+    @RenderSection("Scripts", false)
         <style type="text/css">
 		  	body {
 				padding-top: 70px;
@@ -30,33 +31,6 @@
 			textarea {
 				display: block;
 			}
-            .blog-banner {
-	            padding-top:20px;
-	            padding-bottom:20px;
-	            margin-bottom: 20px;
-	            line-height: 30px;
-	            height:50px;
-	            color: inherit;
-	            -webkit-border-radius: 6px;
-	            -moz-border-radius: 6px;
-	            border-radius: 6px;
-	            margin-left:auto;
-	            margin-right:auto;
-	            background-color:#0088CC;
-            }
-
-            .blog-banner-uname {
-	            color:white;
-	            margin-left:20px;
-	            margin-top:10px;
-	            font-size:30px;
-	            font-weight:bold;
-            }
-            .main {
-                margin-left:20px;
-	            width:auto;
-	            height:auto;
-            }		  
 		</style>
 </head>
 
@@ -79,13 +53,20 @@
 			</div><!-- /navbar-inner -->
 		</div><!-- /navbar -->
     <div class="container">
-        <div class="row well">
+        <div class="row alert alert-info">
             @RenderSection("Banner", false)
         </div>
     </div>
     <div class="container">
         <div class="row">
             @RenderBody()
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <p class="pull-center lead">ss</p>
+            </div>
         </div>
     </div>
 </body>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MCommunity.Models;
+using NLite.Data;
 
 namespace MCommunity
 {
@@ -25,7 +27,15 @@ namespace MCommunity
             routes.MapRoute(
                 "Default", // 路由名称
                 "{controller}/{action}/{id}", // 带有参数的 URL
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // 参数默认值
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } ,// 参数默认值
+                new[] { "MCommunity.Controllers" }// Namespaces 引入默认的命名空间
+            );
+
+            routes.MapRoute(
+                "AdminRoute", // 路由名称
+                "Admin/{controller}/{action}/{id}", // 带有参数的 URL
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // 参数默认值
+                new[] { "MCommunity.Areas.Admin.Controllers" }
             );
 
         }
@@ -36,6 +46,7 @@ namespace MCommunity
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
         }
     }
 }

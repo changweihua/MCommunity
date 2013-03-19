@@ -35,11 +35,6 @@ namespace MCommunity.Repository
     /// </summary>
     public class RepositoryBase<TModel>
     {
-        protected MCommunityContext dbContext;
-        public RepositoryBase()
-        {
-            dbContext = new MCommunityContext();
-        }
         /// <summary>
         /// 添加【继承类重写后才能正常使用】
         /// </summary>
@@ -56,12 +51,6 @@ namespace MCommunity.Repository
         /// 查找指定值【继承类重写后才能正常使用】
         /// </summary>
         public virtual TModel Find(int Id) { return default(TModel); }
-        ~RepositoryBase()
-        {
-            if (dbContext != null)
-            {
-                dbContext.Dispose();
-            }
-        }
+
     }
 }

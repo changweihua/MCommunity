@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+ <ul class="breadcrumb" style="margin-bottom: 5px;">
+                    <li><a href="/blog/changvh">首页</a> <span class="divider">/</span></li>
+                    <li><a href="/admin/home">管理</a> <span class="divider">/</span></li>                  
+                    <li class="active">我的访客</li>
+                </ul>
+                <div class="back-right-inner">
+                    <!-- visits start ================================================== -->
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="/admin/visits">我的访客&nbsp;<span class="badge badge-info">2</span></a>
+                      </li>
+                      <li><a href="/admin/foots">我的足迹</a></li>
+                    </ul>
+                    <div class="divbord">
+                    	<table class="table table-hover">
+	                      <thead>
+	                        <tr class="fc-008">
+	                          <th width="5%">#</th>
+	                          <th width="20%">访客</th>
+	                          <th width="15%">访问时间</th>
+	                          <th width="30%">最后访问地址</th>
+	                          <th width="20%">当前状态</th>
+	                          <th width="10%">操作</th>
+	                        </tr>
+	                      </thead>
+	                      <tbody>
+		                        <tr id="250">
+		                          <td>
+		                          	<div style="margin-top:-3px;">
+			                          	<a href="/blog/skywalker" target="_blank">
+			                          		<img src="http://bebop.qiniudn.com/f31a0088-5f08-4455-9c4e-33779e20e1cc_1_portraint.jpg?imageView/1/w/30/h/30" class="img-rounded">
+			                          	</a>
+		                          	</div>
+		                          </td>
+		                          <td>
+		                          	<a href="/blog/skywalker" target="_blank">
+		                          		牛仔很忙
+		                          	</a>
+		                          </td>
+		                          <td><i class="icon-time"></i>&nbsp;<span class="timeago muted" title="2013-01-23 10:14:23">2013-01-23 10:14:23</span></td>
+		                          <td><a href="/blog/changvh" target="_blank">/blog/changvh</a></td>
+		                          <td>
+<span class='badge userstatus-offline' title='用户不在线'><i class='icon-user icon-white'></i> 现在离线</span>		                          </td>
+		                          <td class="visits-remove" name="250"><a href="javascript:;" title="删除"><i class="icon-remove"></a></i></td>
+		                        </tr>
+		                        <tr id="296">
+		                          <td>
+		                          	<div style="margin-top:-3px;">
+			                          	<a href="/blog/UserName" target="_blank">
+			                          		<img src="http://bebop.qiniudn.com/images/noportraint.jpg?imageView/1/w/30/h/30" class="img-rounded">
+			                          	</a>
+		                          	</div>
+		                          </td>
+		                          <td>
+		                          	<a href="/blog/UserName" target="_blank">
+		                          		小黄狗
+		                          	</a>
+		                          </td>
+		                          <td><i class="icon-time"></i>&nbsp;<span class="timeago muted" title="2013-01-20 15:50:58">2013-01-20 15:50:58</span></td>
+		                          <td><a href="/blog/changvh/fans" target="_blank">/blog/changvh/fans</a></td>
+		                          <td>
+<span class='badge userstatus-offline' title='用户不在线'><i class='icon-user icon-white'></i> 现在离线</span>		                          </td>
+		                          <td class="visits-remove" name="296"><a href="javascript:;" title="删除"><i class="icon-remove"></a></i></td>
+		                        </tr>
+	                      </tbody>
+	                    </table>
+	                    <!-- visits end ================================================== -->
+				    </div>
+                </div>

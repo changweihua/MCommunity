@@ -42,8 +42,9 @@
     <Reference Include="CImage">
       <HintPath>..\..\CLib\Image\bin\Debug\CImage.dll</HintPath>
     </Reference>
-    <Reference Include="ELinq">
-      <HintPath>..\..\..\DLL\elinq\ELinq.dll</HintPath>
+    <Reference Include="ELinq, Version=0.6.2.4, Culture=neutral, PublicKeyToken=de4bad8fb4637582, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ELinq.0.6.2.4\lib\net40\ELinq.dll</HintPath>
     </Reference>
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
@@ -53,7 +54,10 @@
     </Reference>
     <Reference Include="NLite, Version=0.9.5.8, Culture=neutral, PublicKeyToken=f086dca6795b5aa4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ELinq.0.6.2.3\lib\net40\NLite.dll</HintPath>
+      <HintPath>..\packages\NLite.0.9.5.8\lib\net40\NLite.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,7 +120,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleCommentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConcernController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FavoritesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NotificationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PrivacyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VisitsController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\LocalAdminController.cs" />
     <Compile Include="Controllers\ArticleCategoryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
@@ -127,14 +144,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\ArticleCategory.cs" />
-    <Compile Include="Models\Province.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\CommonModel.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\ArticleCategoryRepository.cs" />
+    <Compile Include="Repository\IProvinceRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\MCommunityContext.cs" />
     <Compile Include="Repository\ProvinceRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -657,68 +677,6 @@
     <Content Include="Content\noportraint_big.jpg" />
     <Content Include="Content\note.png" />
     <Content Include="Content\self.png" />
-    <Content Include="Content\themes\base\images\animated-overlay.gif" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.menu.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
-    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Content\toTop.gif" />
     <Content Include="Content\volume_up.png" />
     <Content Include="Content\widgets\artDialog\artDialog.min.js" />
@@ -1070,12 +1028,40 @@
     <Content Include="Content\widgets\jbox\Skins\SharePurple\images\Thumbs.db" />
     <Content Include="Content\widgets\jbox\Skins\ShareRed\Desktop.ini" />
     <Content Include="Content\widgets\jbox\Skins\ShareRed\images\Thumbs.db" />
+    <Content Include="Scripts\jsrender.js" />
+    <Content Include="Scripts\templates.js" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Home.cshtml" />
+    <Content Include="Areas\Admin\Views\Profile\Email.cshtml" />
+    <Content Include="Areas\Admin\Views\Profile\Password.cshtml" />
+    <Content Include="Areas\Admin\Views\Profile\Portraint.cshtml" />
+    <Content Include="Areas\Admin\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Privacy\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Visits\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleComment\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Concern\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Draft.cshtml" />
+    <Content Include="Areas\Admin\Views\Favorites\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Notification\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Manage.cshtml" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -1088,8 +1074,6 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.0.js" />
     <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jQuery.tmpl.js" />
     <Content Include="Scripts\jQuery.tmpl.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1119,23 +1103,23 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Admin\Article.cshtml" />
-    <Content Include="Views\Admin\ArticleCategory.cshtml" />
-    <Content Include="Views\Admin\Comment.cshtml" />
-    <Content Include="Views\Admin\Concern.cshtml" />
-    <Content Include="Views\Admin\Draft.cshtml" />
-    <Content Include="Views\Admin\Email.cshtml" />
-    <Content Include="Views\Admin\Favorite.cshtml" />
-    <Content Include="Views\Admin\Home.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\Message.cshtml" />
-    <Content Include="Views\Admin\NewArticle.cshtml" />
-    <Content Include="Views\Admin\Password.cshtml" />
-    <Content Include="Views\Admin\Portraint.cshtml" />
-    <Content Include="Views\Admin\Pravicy.cshtml" />
-    <Content Include="Views\Admin\Profile.cshtml" />
-    <Content Include="Views\Admin\Remind.cshtml" />
-    <Content Include="Views\Admin\Visit.cshtml" />
+    <Content Include="Views\LocalAdmin\Article.cshtml" />
+    <Content Include="Views\LocalAdmin\ArticleCategory.cshtml" />
+    <Content Include="Views\LocalAdmin\Comment.cshtml" />
+    <Content Include="Views\LocalAdmin\Concern.cshtml" />
+    <Content Include="Views\LocalAdmin\Draft.cshtml" />
+    <Content Include="Views\LocalAdmin\Email.cshtml" />
+    <Content Include="Views\LocalAdmin\Favorite.cshtml" />
+    <Content Include="Views\LocalAdmin\Home.cshtml" />
+    <Content Include="Views\LocalAdmin\Index.cshtml" />
+    <Content Include="Views\LocalAdmin\Message.cshtml" />
+    <Content Include="Views\LocalAdmin\NewArticle.cshtml" />
+    <Content Include="Views\LocalAdmin\Password.cshtml" />
+    <Content Include="Views\LocalAdmin\Portraint.cshtml" />
+    <Content Include="Views\LocalAdmin\Pravicy.cshtml" />
+    <Content Include="Views\LocalAdmin\Profile.cshtml" />
+    <Content Include="Views\LocalAdmin\Remind.cshtml" />
+    <Content Include="Views\LocalAdmin\Visit.cshtml" />
     <Content Include="Views\ArticleCategory\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Password\Forget.cshtml" />
@@ -1144,6 +1128,9 @@
     <Content Include="Views\User\PasswordReset.cshtml" />
     <Content Include="Views\User\PortraintReset.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

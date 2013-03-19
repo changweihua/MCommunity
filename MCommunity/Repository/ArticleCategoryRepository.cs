@@ -47,17 +47,20 @@ namespace MCommunity.Repository
             {
                 return false;
             }
+            int count = 0;
+            using (var db = new MCommunityContext())
+            {
+                count = db.ArticleCategories.Insert(articleCategory);
+            }
 
-            int count = dbContext.ArticleCategories.Insert(articleCategory);
-
-           if (count > 0)
-           {
-               return true;
-           }
-           else
-           {
-               return false;
-           }
+            if (count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -66,7 +69,12 @@ namespace MCommunity.Repository
         /// <returns></returns>
         public IQueryable<ArticleCategory> List()
         {
-            return dbContext.ArticleCategories;
+            IQueryable<ArticleCategory> list;
+            using (var db = new MCommunityContext())
+            {
+                list = db.ArticleCategories;
+            }
+            return list;
         }
     }
 }
