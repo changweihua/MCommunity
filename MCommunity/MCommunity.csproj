@@ -143,12 +143,9 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GlobalController.cs" />
-    <Compile Include="Controllers\LocalAdminController.cs" />
-    <Compile Include="Controllers\ArticleCategoryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extensions\RssActionResult.cs" />
     <Compile Include="Extensions\RssResult.cs" />
@@ -799,7 +796,6 @@
     <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Home.cshtml" />
     <Content Include="Areas\Admin\Views\Profile\Email.cshtml" />
     <Content Include="Areas\Admin\Views\Profile\Password.cshtml" />
@@ -819,6 +815,9 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\MCommunityError.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -862,35 +861,10 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\LocalAdmin\Article.cshtml" />
-    <Content Include="Views\LocalAdmin\ArticleCategory.cshtml" />
-    <Content Include="Views\LocalAdmin\Comment.cshtml" />
-    <Content Include="Views\LocalAdmin\Concern.cshtml" />
-    <Content Include="Views\LocalAdmin\Draft.cshtml" />
-    <Content Include="Views\LocalAdmin\Email.cshtml" />
-    <Content Include="Views\LocalAdmin\Favorite.cshtml" />
-    <Content Include="Views\LocalAdmin\Home.cshtml" />
-    <Content Include="Views\LocalAdmin\Index.cshtml" />
-    <Content Include="Views\LocalAdmin\Message.cshtml" />
-    <Content Include="Views\LocalAdmin\NewArticle.cshtml" />
-    <Content Include="Views\LocalAdmin\Password.cshtml" />
-    <Content Include="Views\LocalAdmin\Portraint.cshtml" />
-    <Content Include="Views\LocalAdmin\Pravicy.cshtml" />
-    <Content Include="Views\LocalAdmin\Profile.cshtml" />
-    <Content Include="Views\LocalAdmin\Remind.cshtml" />
-    <Content Include="Views\LocalAdmin\Visit.cshtml" />
-    <Content Include="Views\ArticleCategory\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Password\Forget.cshtml" />
-    <Content Include="Views\Password\Modify.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Shared\MCommunityError.cshtml" />
-    <Content Include="Views\Global\Error.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NoAuthority.cshtml" />
@@ -898,6 +872,11 @@
     <Content Include="Views\Test\TestForm.cshtml" />
     <Content Include="Views\Account\OnLine.cshtml" />
     <Content Include="Views\Account\OffLine.cshtml" />
+    <Content Include="Views\Global\FriendLinks.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Global\CopyRight.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -923,7 +902,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>9041</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:14136/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

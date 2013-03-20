@@ -1,0 +1,23 @@
+﻿<div id="copy" class="row alert alert-success alert-block">
+    <a class="close"><i class="icon-minus"></i></a>
+    <h4 class="alert-heading"><i class="icon-bullhorn"></i>版权说明</h4>
+    <p id="rights" class="text-center lead">
+        版权所有&copy; 2013 - 2014 All Rights Reserved .
+        <br />
+        常伟华 CMONO.NET 技术
+    </p>
+</div>
+
+<script>
+    $(function () {
+        $('#copy a.close').on('click', function (e) {
+            e.preventDefault();
+            if ($(this).children('i').hasClass('icon-plus')) {
+                $(this).children('i').removeClass('icon-plus').addClass('icon-minus');
+            } else {
+                $(this).children('i').removeClass('icon-minus').addClass('icon-plus');
+            }
+            $('#rights').slideToggle('slow');
+        });
+    });
+</script>

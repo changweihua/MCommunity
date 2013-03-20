@@ -8,12 +8,17 @@ namespace MCommunity.Controllers
 {
     public class GlobalController : Controller
     {
-        //
-        // GET: /Global/
-
-        public ActionResult Error()
+       
+        [ChildActionOnly]
+        public ActionResult FriendLinks()
         {
-            return View();
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult CopyRight()
+        {
+            return PartialView();
         }
 
     }

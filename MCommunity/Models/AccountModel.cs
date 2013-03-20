@@ -109,4 +109,20 @@ namespace MCommunity.Models
         public bool IsRemember { get; set; }
     }
 
+    [Table(Name="tbAccountOnline")]
+    public class AccountOnline
+    {
+        [Id(Name="Id",IsDbGenerated=true)]
+        public int Id { get; set; }
+        [Column(Name = "AccountId")]
+        public int AccountId { get; set; }
+        [Column(Name = "LoginDate")]
+        public string LoginDate { get; set; }
+        [Column(Name = "CurrentUri")]
+        public string CurrentUri { get; set; }
+
+        public Account Member;
+
+    }
+
 }

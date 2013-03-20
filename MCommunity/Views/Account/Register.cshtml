@@ -1,0 +1,123 @@
+﻿@model  MCommunity.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@section Banner{
+    <h2>CMONO.NET社区 会员 - 注册 (第一步：填写会员信息)</h2>
+}
+
+<div class="row-fluid">
+    <div class="span12 alert alert-success">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <blockquote style="display: inline-block;">
+                    <p><span class="badge badge-info">1</span> 填写会员信息</p>
+                </blockquote>
+                <blockquote style="display: inline-block;">
+                    <p><span class="badge badge-info">1</span> 填写会员信息</p>
+                </blockquote>
+                <blockquote style="display: inline-block;">
+                    <p><span class="badge badge-info">1</span> 填写会员信息</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                @using (@Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">电子邮箱</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(_ => _.Email, new { placeholder = "1122", @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.Email)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">用户名</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(_ => _.AccountName, new { placeholder = "1122", @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.AccountName)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">密码</label>
+                        <div class="controls">
+                            @Html.PasswordFor(_ => _.Password, new { placeholder = "1122", @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.Password)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">重新输入密码</label>
+                        <div class="controls">
+                            @Html.PasswordFor(_ => _.RePassword, new { placeholder = "1122", @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.RePassword)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">昵称</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(_ => _.NickName, new { placeholder = "1122", @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.NickName)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">性别</label>
+                        <div class="controls">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="Gender" id="inlineCheckbox1" value="男">
+                                男
+                            </label>
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="Gender" id="inlineCheckbox2" value="女">
+                                女 
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">居住地区</label>
+                        <div class="controls">
+                            @Html.DropDownListFor(_ => _.ProvinceId, @ViewBag.Provinces as SelectList, new { @class = "span6" })
+                            <span class="help-block">@Html.ValidationMessageFor(_ => _.ProvinceId)</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">验证码</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(_ => _.CheckCode, new { @class = "span6" })
+                            <span class="help-block">
+                                <img src="@Url.Action("VerificationCode", "Common")" />
+                                @Html.ValidationMessageFor(_ => _.CheckCode)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail"></label>
+                        <div class="controls">
+                            <input class="btn btn-primary" type="submit" value="提交注册" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //var i = 2;
+    //function demo()
+    //{
+    //    alert(i);
+    //    var i = "hello";
+    //    alert(i);
+    //}
+
+    //(function () {
+    //    demo();
+    //})();
+
+    //$(function () {
+    //    demo();
+    //});
+
+</script>

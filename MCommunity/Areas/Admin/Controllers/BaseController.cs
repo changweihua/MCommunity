@@ -12,10 +12,5 @@ namespace MCommunity.Areas.Admin.Controllers
     public class BaseController : Controller
     {
         //Order决定Attribute的执行顺序
-        public ActionResult Index()
-        {
-            return View();
-        }
-
     }
 }
