@@ -74,6 +74,11 @@ namespace MCommunity.Controllers
             return new XmlResult(list, new Person().GetType());
         }
 
+        public ActionResult TestForm()
+        {
+            return View();
+        }
+
     }
 
     [Serializable]

@@ -40,6 +40,23 @@ namespace MCommunity.Repository
         public AccountRepository(DbContext db)
             : base(db)
         { }
-        
+
+        public bool CheckLogin(LoginModel model)
+        {
+            bool isPass = false;
+
+            using (context)
+            {
+                var account = context.Set<Account>().Where(_ => _.Email == model.Email && _.Password == model.Password).SingleOrDefault();
+                NLog.LogManager.GetCurrentClassLogger().Debug(account == null);
+                if (account != null)
+                {
+                    isPass = true;
+                }
+            }
+
+            return isPass;
+        }
+
     }
 }

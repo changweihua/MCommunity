@@ -39,8 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\..\..\DLL\AntiXSS Library v4.2\NET40\AntiXSSLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="CImage">
       <HintPath>..\..\CLib\Image\bin\Debug\CImage.dll</HintPath>
+    </Reference>
+    <Reference Include="CSecurity">
+      <HintPath>..\..\CLib\Security\bin\Debug\CSecurity.dll</HintPath>
     </Reference>
     <Reference Include="ELinq, Version=0.6.2.4, Culture=neutral, PublicKeyToken=de4bad8fb4637582, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -144,7 +150,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Extensions\RssActionResult.cs" />
     <Compile Include="Extensions\RssResult.cs" />
     <Compile Include="Extensions\XmlResult.cs" />
@@ -189,6 +194,8 @@
     <Content Include="Content\404.jpg" />
     <Content Include="Content\aaa.png" />
     <Content Include="Content\admin.css" />
+    <Content Include="Content\arr_left.gif" />
+    <Content Include="Content\arr_right.gif" />
     <Content Include="Content\bootstrap\default\css\bootstrap-ie6.css" />
     <Content Include="Content\bootstrap\default\css\bootstrap-ie6.min.css" />
     <Content Include="Content\bootstrap\default\css\bootstrap-responsive.css" />
@@ -699,6 +706,7 @@
     <Content Include="Content\editor\third-party\SyntaxHighlighter\shCoreDefault.css" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\group.png" />
+    <Content Include="Content\links\cnblogs_logo.gif" />
     <Content Include="Content\loading.gif" />
     <Content Include="Content\logo.ico" />
     <Content Include="Content\new.gif" />
@@ -778,6 +786,8 @@
     <Content Include="Content\editor\net\imageUp.ashx" />
     <Content Include="Content\editor\net\Web.config" />
     <Content Include="Content\editor\third-party\source code for imgupload with flash.zip" />
+    <Content Include="Scripts\bxCarousel.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jsrender.js" />
     <Content Include="Scripts\templates.js" />
     <Content Include="x64\SQLite.Interop.dll">
@@ -876,18 +886,18 @@
     <Content Include="Views\Password\Forget.cshtml" />
     <Content Include="Views\Password\Modify.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\User\PasswordReset.cshtml" />
-    <Content Include="Views\User\PortraintReset.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Shared\MCommunityError.cshtml" />
     <Content Include="Views\Global\Error.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NoAuthority.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Test\TestForm.cshtml" />
+    <Content Include="Views\Account\OnLine.cshtml" />
+    <Content Include="Views\Account\OffLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

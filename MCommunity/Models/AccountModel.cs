@@ -71,6 +71,9 @@ namespace MCommunity.Models
         public string Portraint { get; set; }
     }
 
+    /// <summary>
+    /// 注册模型
+    /// </summary>
     public class RegisterModel
     {
         [Required]
@@ -90,6 +93,20 @@ namespace MCommunity.Models
         public int CityId { get; set; }
         [Required]
         public string CheckCode { get; set; }
+    }
+
+    /// <summary>
+    /// 登录模型 
+    /// </summary>
+    public class LoginModel
+    {
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
+        [Required]
+        public string CheckCode { get; set; }
+        public bool IsRemember { get; set; }
     }
 
 }

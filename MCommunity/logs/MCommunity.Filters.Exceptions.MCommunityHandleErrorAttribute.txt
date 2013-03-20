@@ -1,24 +1,13 @@
-2013-03-19 19:30:40.9947 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 19:30:41.0307 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException “class”是保留字，不能在隐式表达式中使用。必须使用显式表达式("@()")。
-
-2013-03-19 19:31:53.3699 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 19:31:53.3699 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException “class”是保留字，不能在隐式表达式中使用。必须使用显式表达式("@()")。
-
-2013-03-19 19:45:08.9824 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 19:45:09.0024 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException Entity type 'MCommunity.Models.ArticleType' not configure mapping!
-2013-03-19 20:20:34.7171 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 20:20:34.7561 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException 不存在具有键“CategoryId”的“IEnumerable<SelectListItem>”类型的 ViewData 项。
-2013-03-19 20:22:12.8047 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 20:22:12.8327 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException 不存在具有键“CategoryId”的“IEnumerable<SelectListItem>”类型的 ViewData 项。
-2013-03-19 20:26:30.8694 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 20:26:30.9054 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException 不存在具有键“CategoryId”的“IEnumerable<SelectListItem>”类型的 ViewData 项。
-2013-03-19 20:39:49.2292 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 20:39:49.2422 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException e:\VS2012\MCommunity\MCommunity\Areas\Admin\Views\Article\Create.cshtml(75): error CS1061: “MCommunity.Models.Article”不包含“IsDraft”的定义，并且找不到可接受类型为“MCommunity.Models.Article”的第一个参数的扩展方法“IsDraft”(是否缺少 using 指令或程序集引用?)
-2013-03-19 20:54:35.5479 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 20:54:35.5699 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException SQL logic error or missing database
-table tbArticle has no column named IsPublic
-2013-03-19 21:23:26.3418 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 21:23:26.3578 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException 未将对象引用设置到对象的实例。
-2013-03-19 21:32:39.7128 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
-2013-03-19 21:32:39.7388 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException database is locked
+2013-03-20 13:03:44.1389 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
+2013-03-20 13:03:44.1389 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException 未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Views/account/Index.aspx
+~/Views/account/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/account/Index.cshtml
+~/Views/account/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+2013-03-20 13:24:24.7782 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException True
+2013-03-20 13:24:24.7782 ControllerActionInvoker.InvokeAction => ControllerActionInvoker.InvokeExceptionFilters => MCommunityHandleErrorAttribute.OnException database is locked
 database is locked
