@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class ProfileController : Controller
+    public class ProfileController : BaseController
     {
         //
         // GET: /Admin/Profile/

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class ArticleCommentController : Controller
+    public class ArticleCommentController : BaseController
     {
         //
         // GET: /Admin/ArticleComment/

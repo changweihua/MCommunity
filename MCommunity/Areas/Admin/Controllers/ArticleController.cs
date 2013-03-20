@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MCommunity.Filters.Authorizes;
 using MCommunity.Models;
 using MCommunity.Repository;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class ArticleController : Controller
+    public class ArticleController : BaseController
     {
         private ArticleRepository articleRepository;
         private ArticleCategoryRepository articleCategoryRepository;

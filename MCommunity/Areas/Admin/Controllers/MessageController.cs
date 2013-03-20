@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class MessageController : Controller
+    public class MessageController : BaseController
     {
         //
         // GET: /Admin/Message/

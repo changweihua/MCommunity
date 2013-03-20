@@ -8,7 +8,7 @@ using MCommunity.Repository;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class ArticleCategoryController : Controller
+    public class ArticleCategoryController : BaseController
     {
 
         private ArticleCategoryRepository articleCategoryRepository;

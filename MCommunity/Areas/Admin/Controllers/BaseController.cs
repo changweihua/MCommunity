@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MCommunity.Filters.Authorizes;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class VisitsController : BaseController
+    [CheckLogin(Order = 1)]
+    [SimpleAuthorize(Order = 3)]
+    public class BaseController : Controller
     {
-        //
-        // GET: /Admin/Visits/
-
+        //Order决定Attribute的执行顺序
         public ActionResult Index()
         {
             return View();

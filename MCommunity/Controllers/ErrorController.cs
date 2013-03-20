@@ -21,5 +21,10 @@ namespace MCommunity.Controllers
             return View();
         }
 
+        public ActionResult NoAuthority()
+        {
+            return View();
+        }
+
     }
 }

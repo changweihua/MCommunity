@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class NotificationController : Controller
+    public class NotificationController : BaseController
     {
         //
         // GET: /Admin/Notification/

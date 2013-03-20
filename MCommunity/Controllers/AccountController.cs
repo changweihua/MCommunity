@@ -4,14 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MCommunity.Areas.Admin.Controllers
+namespace MCommunity.Controllers
 {
-    public class VisitsController : BaseController
+    public class AccountController : Controller
     {
         //
-        // GET: /Admin/Visits/
+        // GET: /Account/
 
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult LogOn()
         {
             return View();
         }

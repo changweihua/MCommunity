@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MCommunity.Areas.Admin.Controllers
 {
-    public class FavoritesController : Controller
+    public class FavoritesController : BaseController
     {
         //
         // GET: /Admin/Favorites/
